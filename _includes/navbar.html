@@ -1,0 +1,26 @@
+<!-- Navigation Bar -->
+<div class="ui fixed menu">
+  <div class="menu">
+    <div id="nav_sidebar" class="item"><i class="icon large grey content"></i></div>
+  </div>
+
+  <!-- Site Ttitle -->
+  <a href="/" class="header item">{{ site.title }}</a>
+
+  <div class="right item">
+    <form id="site_search" action="get" class="ui form icon input">
+      <input type="search" id="search_box" placeholder="Search...">
+      <i class="search icon"></i>
+    </form>
+  </div>
+
+</div>
+
+
+<!-- Navigation Side Bar -->
+<div class="ui sidebar inverted vertical menu">
+  <div class="item">Menu</div>
+  {% for menu in site.nav_menu %}
+    <a class="item" href="{{ menu[1] }}">{{ menu[0] }}</a>
+  {% endfor %}
+</div>

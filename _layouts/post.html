@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="ui segment">
+  {{ page.date | date: "%Y/%m/%d" }}
+  <div class="ui huge header">
+    {{ page.title }}
+  </div>
+
+  {% for tag in page.tags %}
+    <a class="ui tag label" href="{{ site.baseurl }}/tags/{{ tag | slugize }}">
+      {{ tag }}
+    </a>
+  {% endfor %}
+
+  <div class="ui divider"></div>
+
+  <div class="ui container">
+    {{ content }}
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charaset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+  <title>Jekyll sample</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+  {% include css_js_include.html %}
+</head>
+
+<body>
+  {% include navbar.html %}
+
+  <div class="contents_body ui container">
+    <div class="page_contents">
+      {{ content }}
+    </div>
+  </div>
+
+
+  <script src="{{ 'assets/js/lunr/search.js' | relative_url }}"></script>
+  <script>
+      $('.item').click(function(){
+         $('.active').removeClass('active');
+         $(this).addClass('active');
+      });
+      $('.tabular.menu .item').tab({history:false});
+
+      $('#nav_sidebar').click(function() {
+          $('.ui.sidebar').sidebar('toggle');
+      });
+
+
+      $('.menu .item')
+        .tab()
+      ;
+      hljs.initHighlightingOnLoad();
+  </script>
+
+  <template id="card_template">
+    <div class="ui card item" style="min-height: 250px; min-width: 150px;">
+      <div class="content">
+        <div class="header">
+          <a href=""></a>
+        </div>
+        <div class="ui image">
+          <img src="" />
+        </div>
+        <div class="meta">
+          <span></span>
+        </div>
+        <div class="description"></div>
+      </div>
+      <div class="extra content">
+      </div>
+    </div>
+  </template>
+
+</body>
+
+</html>
